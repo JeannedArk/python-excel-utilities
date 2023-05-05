@@ -30,6 +30,7 @@ def validate_sheet(ws):
             sys.exit(f"CO2 emission value {val} at row {i} exceeds maximum value of {CO2_MAX_VAL}")
     print(f"Data is valid for sheet: {ws.title}")
 
+
 if __name__ == "__main__":
     wb = openpyxl.load_workbook(EXCEL_SHEET_PATH)
     ws = wb.active
