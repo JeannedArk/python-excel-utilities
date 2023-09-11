@@ -1,5 +1,3 @@
-
-from dataclasses import dataclass
 import os
 import shutil
 import openpyxl
@@ -14,13 +12,13 @@ REGION_COL_IDX = 1
 CRE_ID_COL_IDX = 2
 
 
-@dataclass
 class SampleTemplateRow:
-    region: str
-    creid: str
-    address: str
-    sampling_period: str
-    sampling_value: str
+    def __init__(self, region, creid, address, sampling_period, sampling_value) -> None:
+        self.region = region
+        self.creid = creid
+        self.address = address
+        self.sampling_period = sampling_period
+        self.sampling_value = sampling_value
 
     def __str__(self):
         return f"Region: {self.region}, CREID: {self.creid}, Address: {self.address}, Sampling Period: {self.sampling_period}, Sampling Value: {self.sampling_value}"
